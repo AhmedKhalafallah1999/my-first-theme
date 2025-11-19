@@ -1,0 +1,9 @@
+<section class="hero-section">
+    <div class="container text-center">
+        <h1>{{ theme.settings.get('home.hero-section.title') }}</h1>
+        <p>{{ theme.settings.get('home.hero-section.desc') }}</p>
+        {% if theme.settings.get('home.hero-section.btn') %}
+            <a href="#!" class="btn-primary">{{ theme.settings.get('home.hero-section.btn') }}</a>
+        {% endif %}
+    </div>
+</section>
