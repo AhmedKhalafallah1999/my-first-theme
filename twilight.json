@@ -1031,6 +1031,16 @@
                     "maxLength": 30
                 }
             ]
+        },
+        {
+            "key": "f35743b1-0c10-43be-9ab7-3fd909a0b4c7",
+            "title": {
+                "en": "hero-section",
+                "ar": "قسم الهيرو سيكشن"
+            },
+            "icon": "sicon-store",
+            "path": "home.hero-section",
+            "fields": []
         }
     ],
     "support_url": null,
