@@ -1040,7 +1040,55 @@
             },
             "icon": "sicon-store",
             "path": "home.hero-section",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String",
+                    "description": "قم باضافة عنوان الهيرو سيكشن الذي تحب ظهوره",
+                    "labelHTML": "عنوان الهيرو سيكشن",
+                    "placeholder": "عنوان الهيرو سيكشن",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "public": true
+                },
+                {
+                    "id": "desc",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String 1",
+                    "description": "وصف الهيرو سيكشن",
+                    "labelHTML": "وصف الهيرو سيكشن",
+                    "placeholder": "وصف الهيرو سيكشن",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "public": true
+                },
+                {
+                    "id": "btn",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String 2",
+                    "description": "عنوان الزر",
+                    "labelHTML": "عنوان الزر",
+                    "placeholder": "عنوان الزر",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": null,
