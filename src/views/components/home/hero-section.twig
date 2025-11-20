@@ -1,12 +1,3 @@
-{#
-| Variable          | Type   | Description                                  |
-|------------------|--------|----------------------------------------------|
-| hero_items[]      | array  | List of hero items (usually one main item)  |
-| hero_items[].title| string | Main title                                  |
-| hero_items[].desc | string | Description                                 |
-| hero_items[].btn  | string | Button text                                 |
-#}
-
 <section class="hero-section container" style="
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: #fff;
@@ -15,28 +6,26 @@
     border-radius: 20px;
     overflow: hidden;
 ">
-    <div class="grid grid-cols-1 gap-6">
-        {% for item in hero_items %}
-            <div class="hero-item">
-                <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
-                    {{ item.title ?: theme.settings.get('home.hero-section.title') ?: 'مرحبًا بك في متجرنا' }}
-                </h1>
-                <p style="font-size: 1.5rem; margin-bottom: 30px;">
-                    {{ item.desc ?: theme.settings.get('home.hero-section.desc') ?: 'أفضل المنتجات مع أفضل العروض' }}
-                </p>
-                <a href="#!" style="
-                    display: inline-block;
-                    padding: 15px 40px;
-                    background-color: #fff;
-                    color: #ff7e5f;
-                    font-weight: bold;
-                    text-decoration: none;
-                    border-radius: 50px;
-                    transition: 0.3s;
-                " onmouseover="this.style.backgroundColor='#ffd6c2';" onmouseout="this.style.backgroundColor='#fff';">
-                    {{ item.btn ?: theme.settings.get('home.hero-section.btn') ?: 'تسوق الآن' }}
-                </a>
-            </div>
-        {% endfor %}
+    <div class="hero-item">
+        <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
+            {{ theme.settings.get('home.hero-section.title') ?: 'مرحبًا بك في متجرنا' }}
+        </h1>
+
+        <p style="font-size: 1.5rem; margin-bottom: 30px;">
+            {{ theme.settings.get('home.hero-section.desc') ?: 'أفضل المنتجات مع أفضل العروض' }}
+        </p>
+
+        <a href="#!" style="
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #fff;
+            color: #ff7e5f;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        ">
+            {{ theme.settings.get('home.hero-section.btn') ?: 'تسوق الآن' }}
+        </a>
     </div>
 </section>

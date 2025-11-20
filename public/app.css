@@ -2229,15 +2229,6 @@ select {
 .btn:hover {
     opacity: 0.8;
 }
-.btn-primary {
-    border-width: 1px;
-    border-color: #414042;
-    border-color: var(--color-primary);
-    background-color: #414042;
-    background-color: var(--color-primary);
-    color: #ff6767;
-    color: var(--color-primary-reverse);
-}
 .form-label {
     margin-bottom: 0.25rem;
     display: block;
