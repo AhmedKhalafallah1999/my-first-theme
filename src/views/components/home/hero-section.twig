@@ -1,36 +1,22 @@
-<section class="hero-section container" style="
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-    border-radius: 20px;
-    overflow: hidden;
-">
-    {% set hero = component.items[0] ?? {} %}
+<section class="hero-section container">
+    <!-- طباعة البيانات لفحصها -->
+    <pre>
+    {% if component is defined %}
+        {% set hero = component.items[0] ?? {} %}
+        Hero Item (items[0]):
+        {{ hero|json_encode(constant('JSON_PRETTY_PRINT')) }}
 
-```
-<div class="hero-item">
-    <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
-        {{ hero.title ?: 'مرحبًا بك في متجرنا' }}
-    </h1>
+        Component كامل:
+        {{ component|json_encode(constant('JSON_PRETTY_PRINT')) }}
+    {% else %}
+        component غير موجود!
+    {% endif %}
+    </pre>
 
-    <p style="font-size: 1.5rem; margin-bottom: 30px;">
-        {{ hero.desc ?: 'أفضل المنتجات مع أفضل العروض' }}
-    </p>
-
-    <a href="{{ hero.btn_link ?: '#!' }}" style="
-        display: inline-block;
-        padding: 15px 40px;
-        background-color: #fff;
-        color: #ff7e5f;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 50px;
-        transition: 0.3s;
-    ">
-        {{ hero.btn ?: 'تسوق الآن' }}
-    </a>
-</div>
-```
-
+    <!-- محتوى الهيرو العادي -->
+    <div class="hero-item">
+        <h1>{{ hero.title ?: 'مرحبًا بك في متجرنا' }}</h1>
+        <p>{{ hero.desc ?: 'أفضل المنتجات مع أفضل العروض' }}</p>
+        <a href="{{ hero.btn_link ?: '#!' }}">{{ hero.btn ?: 'تسوق الآن' }}</a>
+    </div>
 </section>
