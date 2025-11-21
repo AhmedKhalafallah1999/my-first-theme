@@ -2,19 +2,21 @@ import BasePage from "../base-page";
 
 class HeroSection extends BasePage {
   onReady() {
-    // تأكد أن Salla API جاهز
+    console.log("HeroSection onReady called");
+    if (!window.salla?.api?.component) {
+      console.error("Salla API not ready yet");
+      return;
+    }
     this.fetchAllComponents();
   }
 
   async fetchAllComponents() {
     try {
       console.log("Fetching all Salla components...");
-      // 1. جلب قائمة الكومبوننتات
       const listResponse = await salla.api.component.list();
       const components = listResponse?.data || [];
       console.log("All Components:", components);
 
-      // 2. جلب تفاصيل كل كومبوننت
       for (const comp of components) {
         try {
           const detail = await salla.api.request(`component/get/${comp.key}`);
@@ -29,5 +31,4 @@ class HeroSection extends BasePage {
   }
 }
 
-// تأكد من استدعاء الصفحة فقط عند نوع page معين
-HeroSection.initiateWhenReady(["home.index", "home.hero-section"]);
+HeroSection.initiateWhenReady(["*"]);
