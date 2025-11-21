@@ -1,5 +1,51 @@
 import BasePage from "../base-page";
 
+class CustomHeroSection extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.component = JSON.parse(this.getAttribute("component")) || {};
+    this.render();
+  }
+
+  render() {
+    this.innerHTML = ` <section class="hero-section container" style="
+       background: linear-gradient(135deg, #ff7e5f, #feb47b);
+       color: #fff;
+       padding: 100px 0;
+       text-align: center;
+       border-radius: 20px;
+       overflow: hidden;
+   "> <div class="hero-item"> <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
+${this.component.title || "مرحبًا بك في متجرنا"} </h1>
+
+
+          <p style="font-size: 1.5rem; margin-bottom: 30px;">
+              ${this.component.desc || "أفضل المنتجات مع أفضل العروض"}
+          </p>
+
+          <a href="${this.component.btn_link || "#!"}" style="
+              display: inline-block;
+              padding: 15px 40px;
+              background-color: #fff;
+              color: #ff7e5f;
+              font-weight: bold;
+              text-decoration: none;
+              border-radius: 50px;
+              transition: 0.3s;
+          ">
+              ${this.component.btn || "تسوق الآن"}
+          </a>
+      </div>
+  </section>
+`;
+  }
+}
+
+customElements.define("custom-hero-section", CustomHeroSection);
+
 class HeroSection extends BasePage {
   onReady() {
     console.log("HeroSection onReady called");
@@ -26,30 +72,22 @@ class HeroSection extends BasePage {
         return;
       }
 
-      console.log("Fetching all Salla components...");
       const listResponse = await salla.api.component.list();
       const components = listResponse?.data || [];
 
-      console.log(`Number of components found: ${components.length}`);
-      console.log("All Components:", components);
-
-      // إذا لم توجد مكونات، اعرض رسالة
       if (!components.length) {
-        this.displayComponents([
-          { key: "no-components", name: "لا توجد مكونات حالياً" },
+        this.displayHeroComponents([
+          { key: "no-components", title: "لا توجد مكونات حالياً" },
         ]);
         return;
       }
 
-      // Fetch component details in parallel
       const fetchComponentWithRetry = async (comp, retries = 3) => {
         try {
-          const detail = await salla.api.request(`component/get/${comp.key}`);
-          return detail;
+          return await salla.api.request(`component/get/${comp.key}`);
         } catch (err) {
           if (retries > 0) return fetchComponentWithRetry(comp, retries - 1);
-          console.error(`Failed to fetch component ${comp.key}`, err);
-          return { key: comp.key, name: "Error fetching component" };
+          return { key: comp.key, title: "Error fetching component" };
         }
       };
 
@@ -57,34 +95,27 @@ class HeroSection extends BasePage {
         components.map((comp) => fetchComponentWithRetry(comp))
       );
 
-      // عرض جميع المكونات على الصفحة
-      this.displayComponents(allDetails);
+      this.displayHeroComponents(allDetails);
     } catch (err) {
       console.error("Error fetching components list:", err);
     }
   }
 
-  displayComponents(components) {
+  displayHeroComponents(components) {
     let container = document.getElementById("hero-components");
     if (!container) {
       container = document.createElement("div");
       container.id = "hero-components";
-      container.style.border = "1px solid #ccc";
-      container.style.padding = "10px";
-      container.style.margin = "10px 0";
-      container.style.background = "#f9f9f9";
       document.body.prepend(container);
     }
 
-    container.innerHTML = ""; // تنظيف المحتوى القديم
+    container.innerHTML = "";
     components.forEach((comp) => {
-      const div = document.createElement("div");
-      div.style.padding = "5px 0";
-      div.textContent = comp.name || comp.key || "Unnamed Component";
-      container.appendChild(div);
+      const hero = document.createElement("custom-hero-section");
+      hero.setAttribute("component", JSON.stringify(comp));
+      container.appendChild(hero);
     });
   }
 }
 
-// Initialize for all pages
 HeroSection.initiateWhenReady(null);

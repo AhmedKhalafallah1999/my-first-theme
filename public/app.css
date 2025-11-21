@@ -798,13 +798,6 @@ select {
     outline: 1px solid ButtonText;
     outline: 1px auto -webkit-focus-ring-color;
 }
-.container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 10px;
-    padding-left: 10px;
-}
 .\!container {
     width: 100% !important;
     margin-right: auto !important;
@@ -812,12 +805,19 @@ select {
     padding-right: 10px !important;
     padding-left: 10px !important;
 }
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+}
 @media (min-width: 1280px) {
-    .container {
-        max-width: 1280px;
-    }
     .\!container {
         max-width: 1280px !important;
+    }
+    .container {
+        max-width: 1280px;
     }
 }
 .form-input,.form-textarea,.form-select,.form-multiselect {
