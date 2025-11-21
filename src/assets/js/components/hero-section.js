@@ -31,4 +31,5 @@ class HeroSection extends BasePage {
   }
 }
 
-HeroSection.initiateWhenReady(["*"]);
+// HeroSection.js
+HeroSection.initiateWhenReady(null); // null يعني السماح لكل الصفحات
