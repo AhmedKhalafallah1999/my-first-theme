@@ -5,32 +5,33 @@ document.addEventListener("DOMContentLoaded", async function () {
       ? app.element("#hero-section")
       : document.querySelector("#hero-section");
 
-  if (!heroWrap) {
-    console.error("Hero Section wrapper (#hero-section) not found in DOM!");
-    return;
-  }
+  if (!heroWrap) return;
 
   try {
-    const res = await salla.api.request("component/list", {
-      params: { paths: ["home.hero-section"] },
-    });
+    let block;
 
-    const block = res.data?.[0]?.component || null;
+    // حاول جلب البيانات من الـ API
+    if (
+      typeof salla !== "undefined" &&
+      salla.api &&
+      typeof salla.api.request === "function"
+    ) {
+      const res = await salla.api.request("component/list", {
+        params: { paths: ["home.hero-section"] },
+      });
 
-    if (!block) {
-      console.warn(
-        "Hero Section component is not configured in Theme Dashboard."
-      );
-      heroWrap.innerHTML =
-        '<p style="color:red; text-align:center;">Hero Section component is missing!</p>';
-      return;
+      block = res.data?.[0]?.component || null;
     }
 
-    const title = block.title || "مرحبًا بك في متجرنا";
-    const desc = block.desc || "أفضل المنتجات مع أفضل العروض";
-    const btn = block.btn || "تسوق الآن";
+    // إذا لم نجد بيانات (Preview أو component غير موجود)، استخدم بيانات تجريبية
+    if (!block) {
+      block = {
+        title: "مرحبًا بك في متجرنا",
+        desc: "أفضل المنتجات مع أفضل العروض",
+        btn: "تسوق الآن",
+      };
+    }
 
-    // تخزين HTML في متغير قبل الإسناد لتجنب مشاكل Babel
     const heroHTML = `
       <section class="hero-section container" style="
           background: linear-gradient(135deg, #ff7e5f, #feb47b);
@@ -41,8 +42,8 @@ document.addEventListener("DOMContentLoaded", async function () {
           overflow: hidden;
       ">
         <div class="hero-item">
-          <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">${title}</h1>
-          <p style="font-size: 1.5rem; margin-bottom: 30px;">${desc}</p>
+          <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">${block.title}</h1>
+          <p style="font-size: 1.5rem; margin-bottom: 30px;">${block.desc}</p>
           <a href="#!" style="
               display: inline-block;
               padding: 15px 40px;
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async function () {
               text-decoration: none;
               border-radius: 50px;
               transition: 0.3s;
-          ">${btn}</a>
+          ">${block.btn}</a>
         </div>
       </section>
     `;
@@ -60,7 +61,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     heroWrap.innerHTML = heroHTML;
   } catch (err) {
     console.error("Hero Section load error:", err);
-    heroWrap.innerHTML =
-      '<p style="color:red; text-align:center;">Error loading Hero Section</p>';
+    heroWrap.innerHTML = `
+      <section class="hero-section container" style="
+          background: #333;
+          color: #fff;
+          padding: 100px 0;
+          text-align: center;
+          border-radius: 20px;
+      ">
+        <p>خطأ في تحميل Hero Section، سيتم عرض بيانات تجريبية</p>
+      </section>
+    `;
   }
 });
