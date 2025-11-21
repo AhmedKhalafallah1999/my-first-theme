@@ -5,14 +5,14 @@ class HeroSection extends BasePage {
     console.log("HeroSection onReady called");
 
     const waitForApi = (retries = 50) => {
-      // Retry max 50 times (~5s)
       if (window.salla?.api?.component) {
+        console.log("✅ Salla API is ready:", window.salla.api.component);
         this.fetchAllComponents();
       } else if (retries > 0) {
-        console.log("Salla API not ready yet, retrying...");
+        console.log("⏳ Salla API not ready yet, retrying...");
         setTimeout(() => waitForApi(retries - 1), 100);
       } else {
-        console.warn("Salla API not ready after multiple retries.");
+        console.warn("⚠️ Salla API not ready after multiple retries.");
       }
     };
 
@@ -21,12 +21,23 @@ class HeroSection extends BasePage {
 
   async fetchAllComponents() {
     try {
+      if (!window.salla?.api?.component) {
+        console.warn("⚠️ Cannot fetch components: API not available.");
+        return;
+      }
+
       console.log("Fetching all Salla components...");
       const listResponse = await salla.api.component.list();
       const components = listResponse?.data || [];
+
+      if (!components.length) {
+        console.info("ℹ️ No components found for this page or user.");
+        return;
+      }
+
       console.log("All Components:", components);
 
-      // Fetch component details in parallel with retries
+      // Fetch component details in parallel, safely
       const fetchComponentWithRetry = async (comp, retries = 3) => {
         try {
           const detail = await salla.api.request(`component/get/${comp.key}`);
@@ -34,7 +45,9 @@ class HeroSection extends BasePage {
           return detail;
         } catch (err) {
           if (retries > 0) {
-            console.warn(`Retrying component ${comp.key}...`);
+            console.warn(
+              `Retrying component ${comp.key}... (${retries} retries left)`
+            );
             return fetchComponentWithRetry(comp, retries - 1);
           } else {
             console.error(
@@ -46,10 +59,11 @@ class HeroSection extends BasePage {
         }
       };
 
-      const allDetails = await Promise.all(
+      const allDetails = await Promise.allSettled(
         components.map((comp) => fetchComponentWithRetry(comp))
       );
-      console.log("All Component Details:", allDetails);
+
+      console.log("All Component Details (settled):", allDetails);
     } catch (err) {
       console.error("Error fetching components list:", err);
     }
