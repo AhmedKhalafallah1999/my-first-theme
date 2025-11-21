@@ -1,22 +1,7 @@
-<section class="hero-section container">
-    <!-- طباعة البيانات لفحصها -->
-    <pre>
-    {% if component is defined %}
-        {% set hero = component.items[0] ?? {} %}
-        Hero Item (items[0]):
-        {{ hero|json_encode(constant('JSON_PRETTY_PRINT')) }}
-
-        Component كامل:
-        {{ component|json_encode(constant('JSON_PRETTY_PRINT')) }}
-    {% else %}
-        component غير موجود!
-    {% endif %}
-    </pre>
-
-    <!-- محتوى الهيرو العادي -->
-    <div class="hero-item">
-        <h1>{{ hero.title ?: 'مرحبًا بك في متجرنا' }}</h1>
-        <p>{{ hero.desc ?: 'أفضل المنتجات مع أفضل العروض' }}</p>
-        <a href="{{ hero.btn_link ?: '#!' }}">{{ hero.btn ?: 'تسوق الآن' }}</a>
-    </div>
-</section>
+<pre>
+{% if component is defined %}
+    {{ component|json_encode(constant('JSON_PRETTY_PRINT')) }}
+{% else %}
+    component غير موجود!
+{% endif %}
+</pre>
