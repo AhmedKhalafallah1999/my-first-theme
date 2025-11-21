@@ -19,7 +19,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         params: { paths: ["home.hero-section"] },
       });
 
+      // ← ضع الـ console.log هنا
+
+      console.log("RAW RESPONSE:", res);
+      console.log("DATA:", res.data?.[0]);
+
       block = res.data?.[0]?.component || null;
+
+      console.log("DEBUG BLOCK:", block);
 
       console.log("API BLOCK DATA:", block); // <-- مهم لفحص القيم
     }
