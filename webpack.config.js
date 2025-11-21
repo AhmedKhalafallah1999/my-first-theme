@@ -25,7 +25,7 @@ module.exports = {
     order: asset("js/order.js"),
     testimonials: asset("js/testimonials.js"),
     test: asset("js/test.js"),
-    // "hero-section": asset("js/components/hero-section.js"),
+    "hero-section": asset("js/components/hero-section.js"),
   },
   output: {
     path: public(),

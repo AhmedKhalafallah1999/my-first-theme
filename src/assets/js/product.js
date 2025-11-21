@@ -3,7 +3,6 @@ import BasePage from "./base-page";
 import Fslightbox from "fslightbox";
 window.fslightbox = Fslightbox;
 import { zoom } from "./partials/image-zoom";
-import "./components/hero-section.js";
 
 class Product extends BasePage {
   onReady() {
