@@ -1,7 +1,11 @@
 alert("tmammm");
 
-document.addEventListener("DOMContentLoaded", function () {
-  var heroWrap = app.element("#hero-section");
+document.addEventListener("DOMContentLoaded", async function () {
+  // Use app.element if available, otherwise fallback to querySelector
+  var heroWrap =
+    typeof app !== "undefined" && typeof app.element === "function"
+      ? app.element("#hero-section")
+      : document.querySelector("#hero-section");
 
   ```
 if (!heroWrap) {
@@ -9,11 +13,11 @@ if (!heroWrap) {
     return;
 }
 
-salla.api.request("component/list", { params: { paths: ["home.hero-section"] } })
-.then(function(res) {
+try {
+    const res = await salla.api.request("component/list", { params: { paths: ["home.hero-section"] } });
     console.log("Hero Section API response:", res);
 
-    var block = (res.data && res.data[0] && res.data[0].component) ? res.data[0].component : null;
+    const block = (res.data && res.data[0] && res.data[0].component) ? res.data[0].component : null;
 
     if (!block) {
         console.warn("Hero Section component is not configured in Theme Dashboard.");
@@ -21,9 +25,9 @@ salla.api.request("component/list", { params: { paths: ["home.hero-section"] } }
         return;
     }
 
-    var title = block.title ? block.title : "مرحبًا بك في متجرنا";
-    var desc  = block.desc  ? block.desc  : "أفضل المنتجات مع أفضل العروض";
-    var btn   = block.btn   ? block.btn   : "تسوق الآن";
+    const title = block.title || "مرحبًا بك في متجرنا";
+    const desc  = block.desc  || "أفضل المنتجات مع أفضل العروض";
+    const btn   = block.btn   || "تسوق الآن";
 
     heroWrap.innerHTML = 
         '<section class="hero-section container" style="' +
@@ -40,10 +44,9 @@ salla.api.request("component/list", { params: { paths: ["home.hero-section"] } }
                 '<a href="#!" style="display: inline-block; padding: 15px 40px; background-color: #fff; color: #ff7e5f; font-weight: bold; text-decoration: none; border-radius: 50px; transition: 0.3s;">' + btn + '</a>' +
             '</div>' +
         '</section>';
-})
-.catch(function(err) {
+} catch (err) {
     console.error("Hero Section load error:", err);
     heroWrap.innerHTML = '<p style="color:red; text-align:center;">Error loading Hero Section</p>';
-});
+}
 ```;
 });
