@@ -4,7 +4,6 @@ class HeroSection extends BasePage {
   onReady() {
     // تأكد أن Salla API جاهز
     this.fetchAllComponents();
-    س;
   }
 
   async fetchAllComponents() {
