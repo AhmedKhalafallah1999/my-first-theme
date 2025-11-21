@@ -3,11 +3,17 @@ import BasePage from "../base-page";
 class HeroSection extends BasePage {
   onReady() {
     console.log("HeroSection onReady called");
-    if (!window.salla?.api?.component) {
-      console.error("Salla API not ready yet");
-      return;
-    }
-    this.fetchAllComponents();
+
+    const waitForApi = () => {
+      if (window.salla?.api?.component) {
+        this.fetchAllComponents();
+      } else {
+        console.log("Salla API not ready yet, retrying...");
+        setTimeout(waitForApi, 100); // تحقق كل 100ms
+      }
+    };
+
+    waitForApi();
   }
 
   async fetchAllComponents() {
