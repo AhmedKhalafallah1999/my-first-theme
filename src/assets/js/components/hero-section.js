@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-// حدد عنصر الـ hero-section
+// تحديد عنصر الهيرو
 const heroWrap = (typeof app !== "undefined" && typeof app.element === "function")
 ? app.element("#hero-section")
 : document.querySelector("#hero-section");
@@ -27,7 +27,8 @@ const title = block.title || "مرحبًا بك في متجرنا";
 const desc = block.desc || "أفضل المنتجات مع أفضل العروض";
 const btn = block.btn || "تسوق الآن";
 
-heroWrap.innerHTML = `
+// تخزين HTML في متغير قبل الإسناد لتجنب مشاكل Babel
+const heroHTML = `
   <section class="hero-section container" style="
       background: linear-gradient(135deg, #ff7e5f, #feb47b);
       color: #fff;
@@ -52,6 +53,8 @@ heroWrap.innerHTML = `
     </div>
   </section>
 `;
+
+heroWrap.innerHTML = heroHTML;
 ```
 
 } catch (err) {
