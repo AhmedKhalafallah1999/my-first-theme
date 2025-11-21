@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
     // استبدل YOUR_COMPONENT_ID بالـ ID الفعلي للمكون
-    const compId = "YOUR_COMPONENT_ID";
+    const compId = "f35743b1-0c10-43be-9ab7-3fd909a0b4c7";
     const response = await salla.api.request(`component/get/${compId}`);
     console.log("Component Data:", response);
 
