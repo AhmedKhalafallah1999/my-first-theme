@@ -1,3 +1,4 @@
+alert("tmammm");
 document.addEventListener("DOMContentLoaded", async () => {
   let heroWrap = app.element("#hero-section");
 

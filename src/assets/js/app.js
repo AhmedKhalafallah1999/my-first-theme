@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import Anime from "./partials/anime";
 import initTootTip from "./partials/tooltip";
 import AppHelpers from "./app-helpers";
-import "./components/hero-section.js";
 
 class App extends AppHelpers {
   constructor() {
