@@ -6,11 +6,9 @@
 | page.slug        | string     | ex: "cat.show"                                                      |
 #}
 {% extends "layouts.master" %}
-
 {% block content %}
-    {% component 'home.hero-section' %}
+    {% component home %}
 {% endblock %}
-
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
 {% endblock %}
