@@ -15,18 +15,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       salla.api &&
       typeof salla.api.request === "function"
     ) {
-      const res = await salla.api.request("component/list", {
-        params: { paths: ["home.hero-section"] },
-      });
-
-      // ← ضع الـ console.log هنا
-
-      console.log("RAW RESPONSE:", res);
-      console.log("DATA:", res.data?.[0]);
-
-      block = res.data?.[0]?.component || null;
-
-      console.log("DEBUG BLOCK:", block);
+      const list = await salla.api.request("component/list");
+      console.log("ALL COMPONENTS:", list);
 
       console.log("API BLOCK DATA:", block); // <-- مهم لفحص القيم
     }
