@@ -6,26 +6,31 @@
     border-radius: 20px;
     overflow: hidden;
 ">
-    <div class="hero-item">
-        <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
-            {{ theme.settings.get('home.hero-section.title') ?: 'مرحبًا بك في متجرنا' }}
-        </h1>
+    {% set hero = component.items[0] ?? {} %}
 
-        <p style="font-size: 1.5rem; margin-bottom: 30px;">
-            {{ theme.settings.get('home.hero-section.desc') ?: 'أفضل المنتجات مع أفضل العروض' }}
-        </p>
+```
+<div class="hero-item">
+    <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 20px;">
+        {{ hero.title ?: 'مرحبًا بك في متجرنا' }}
+    </h1>
 
-        <a href="#!" style="
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #fff;
-            color: #ff7e5f;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: 0.3s;
-        ">
-            {{ theme.settings.get('home.hero-section.btn') ?: 'تسوق الآن' }}
-        </a>
-    </div>
+    <p style="font-size: 1.5rem; margin-bottom: 30px;">
+        {{ hero.desc ?: 'أفضل المنتجات مع أفضل العروض' }}
+    </p>
+
+    <a href="{{ hero.btn_link ?: '#!' }}" style="
+        display: inline-block;
+        padding: 15px 40px;
+        background-color: #fff;
+        color: #ff7e5f;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: 0.3s;
+    ">
+        {{ hero.btn ?: 'تسوق الآن' }}
+    </a>
+</div>
+```
+
 </section>
