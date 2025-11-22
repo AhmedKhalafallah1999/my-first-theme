@@ -1,1 +1,74 @@
-<div style="color:red">Footer Loaded</div>
+<footer class="my-footer">
+    <div class="container my-footer__grid">
+
+        <div class="my-footer__col">
+            <h3 class="my-footer__title">دائماً هنا لأجلك</h3>
+
+            <form class="my-footer__subscribe">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني">
+                <button type="submit">إنضم الآن</button>
+            </form>
+        </div>
+
+        <div class="my-footer__col">
+            <h3 class="my-footer__title">تواصل معنا</h3>
+
+            <ul class="my-footer__contact">
+                {% if store.contacts.mobile %}
+                <li>
+                    <a href="tel:{{ store.contacts.mobile }}">
+                        {{ store.contacts.mobile }}
+                        <i class="sicon-phone"></i>
+                    </a>
+                </li>
+                {% endif %}
+
+                {% if store.contacts.email %}
+                <li>
+                    <a href="mailto:{{ store.contacts.email }}">
+                        {{ store.contacts.email }}
+                        <i class="sicon-mail"></i>
+                    </a>
+                </li>
+                {% endif %}
+
+                <li>
+                    <span>RouqayDev <i class="sicon-send"></i></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="my-footer__col">
+            <h3 class="my-footer__title">روابط مهمة</h3>
+
+            <ul class="my-footer__links">
+                <li><a href="{{ link('products?sort=top-selling') }}">الأكثر مبيعاً</a></li>
+                <li><a href="{{ link('offers') }}">العروض</a></li>
+                <li><a href="{{ link('page/terms') }}">الشروط و الأحكام</a></li>
+                <li><a href="{{ link('support') }}">الدعم الفني</a></li>
+            </ul>
+        </div>
+
+        <div class="my-footer__col my-footer__brand">
+            <img src="{{ store.logo }}" alt="{{ store.name }}" class="my-footer__logo">
+
+            <p class="my-footer__desc">
+                عالم يجمع بين عبير العطور الفاخرة و سحر <br>
+                الزينة الراقية و جمال الورد الطبيعي.
+            </p>
+
+            <div class="my-footer__social">
+                {% if store.social.youtube %}
+                    <a href="{{ store.social.youtube }}"><i class="sicon-youtube"></i></a>
+                {% endif %}
+                {% if store.social.instagram %}
+                    <a href="{{ store.social.instagram }}"><i class="sicon-instagram"></i></a>
+                {% endif %}
+                {% if store.social.facebook %}
+                    <a href="{{ store.social.facebook }}"><i class="sicon-facebook"></i></a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</footer>
