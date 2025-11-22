@@ -1,0 +1,85 @@
+.my-footer {
+  background: #f4ded0;
+  padding: 3rem 0;
+}
+
+.my-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.my-footer__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6d3b11;
+  margin-bottom: 1rem;
+}
+
+/* الاشتراك */
+.my-footer__subscribe {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.my-footer__subscribe input {
+  border: 2px solid #a8743f;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  color: #6d3b11;
+}
+
+.my-footer__subscribe button {
+  background: #6d3b11;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* روابط */
+.my-footer__links li,
+.my-footer__contact li {
+  margin-bottom: 0.6rem;
+}
+
+.my-footer__links a,
+.my-footer__contact a {
+  color: #6d3b11;
+  font-size: 0.95rem;
+}
+
+.my-footer__brand {
+  text-align: center;
+}
+
+.my-footer__logo {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.my-footer__desc {
+  color: #6d3b11;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* السوشيال */
+.my-footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.my-footer__social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #6d3b11;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6d3b11;
+  font-size: 1.1rem;
+}
