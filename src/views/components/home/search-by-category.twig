@@ -1,1 +1,37 @@
- {{ component }}
+{#  
+| Variable        | Type   |  
+|-----------------|--------|  
+| component       | object | يحتوي على: title, dropdown_list  |  
+| position        | int    |  
+#}
+
+<section class="s-block container mt-10 text-center">
+    
+    {# العنوان #}
+    {% if component.title %}
+        <h2 class="text-4xl font-bold mb-10">{{ component.title }}</h2>
+    {% endif %}
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-center">
+        {% for item in component.dropdown_list %}
+            <a href="{{ item.url }}" class="flex flex-col items-center group">
+                
+                {# الصورة أو أيقونة لو ما فيه صورة #}
+                {% if item.image %}
+                    <img 
+                        src="{{ item.image }}" 
+                        alt="{{ item.name }}" 
+                        class="w-64 h-64 object-cover rounded-lg shadow-md group-hover:scale-105 transition">
+                {% else %}
+                    <div class="w-64 h-64 flex items-center justify-center bg-gray-100 rounded-lg shadow-md text-6xl">
+                        <i class="{{ item.icon }}"></i>
+                    </div>
+                {% endif %}
+
+                {# الاسم #}
+                <h3 class="text-3xl mt-6 font-semibold">{{ item.name }}</h3>
+            </a>
+        {% endfor %}
+    </div>
+
+</section>
