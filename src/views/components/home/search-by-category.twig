@@ -5,33 +5,60 @@
 | position        | int    |  
 #}
 
-<section class="s-block container mt-10 text-center">
-    
-    {# العنوان #}
+<section class="s-block container mt-16 text-center">
+
+    {# العنوان الرئيسي #}
     {% if component.title %}
-        <h2 class="text-4xl font-bold mb-10">{{ component.title }}</h2>
+        <h2 
+            class="mb-14"
+            style="
+                font-family: Cairo, sans-serif;
+                font-weight: 600;
+                font-size: 42.32px;
+                line-height: 100%;
+                text-align: center;
+            "
+        >
+            {{ component.title }}
+        </h2>
     {% endif %}
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-center">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 justify-center">
+
         {% for item in component.dropdown_list %}
             <a href="{{ item.url }}" class="flex flex-col items-center group">
                 
-                {# الصورة أو أيقونة لو ما فيه صورة #}
-                {% if item.image %}
-                    <img 
-                        src="{{ item.image }}" 
-                        alt="{{ item.name }}" 
-                        class="w-64 h-64 object-cover rounded-lg shadow-md group-hover:scale-105 transition">
-                {% else %}
-                    <div class="w-64 h-64 flex items-center justify-center bg-gray-100 rounded-lg shadow-md text-6xl">
-                        <i class="{{ item.icon }}"></i>
-                    </div>
-                {% endif %}
+                {# الصورة — يجب أن تكون موجودة فقط، لا أيقونات #}
+                <div class="w-[320px] h-[320px] rounded-lg overflow-hidden shadow-md">
+                    {% if item.image %}
+                        <img 
+                            src="{{ item.image }}" 
+                            alt="{{ item.name }}" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                        >
+                    {% else %}
+                        <div class="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400 text-5xl">
+                            لا توجد صورة
+                        </div>
+                    {% endif %}
+                </div>
 
-                {# الاسم #}
-                <h3 class="text-3xl mt-6 font-semibold">{{ item.name }}</h3>
+                {# عنوان التصنيف #}
+                <h3 
+                    class="mt-6"
+                    style="
+                        font-family: Cairo, sans-serif;
+                        font-size: 30px;
+                        font-weight: 600;
+                        line-height: 120%;
+                        text-align: center;
+                    "
+                >
+                    {{ item.name }}
+                </h3>
             </a>
         {% endfor %}
+        
     </div>
 
 </section>
