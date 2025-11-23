@@ -1,1 +1,14 @@
-{{component}}
+{#
+| Variable        | Type       | Description                    |
+|-----------------|------------|--------------------------------|
+| products        | Products[] |                                |
+| position        | Int        | Sorting number start from zero |
+#}
+<section class="s-block s-block--latest-products container mt-6 sm:mt-8">
+    <div class="s-block__title">
+      <h2>{{ component.title }}</h2>
+      <p>{{ component.desc }}</p>
+    </div>
+    
+    <salla-products-list source="latest"></salla-products-list>
+</section> 
