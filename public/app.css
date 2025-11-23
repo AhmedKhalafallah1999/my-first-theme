@@ -886,6 +886,9 @@ select{
 .pointer-events-none{
     pointer-events: none;
 }
+.pointer-events-auto{
+    pointer-events: auto;
+}
 .visible{
     visibility: visible;
 }
@@ -969,6 +972,9 @@ select{
 }
 .col-span-2{
     grid-column: span 2 / span 2;
+}
+.col-span-1{
+    grid-column: span 1 / span 1;
 }
 .m-0{
     margin: 0px;
@@ -1178,6 +1184,9 @@ select{
 }
 .h-80{
     height: 20rem;
+}
+.h-\[260px\]{
+    height: 260px;
 }
 .h-\[300px\]{
     height: 300px;
@@ -1406,6 +1415,9 @@ select{
 .justify-around{
     justify-content: space-around;
 }
+.gap-0{
+    gap: 0px;
+}
 .gap-1{
     gap: 0.25rem;
 }
@@ -1601,6 +1613,9 @@ select{
 .rounded-sm{
     border-radius: 0.125rem;
 }
+.rounded-xl{
+    border-radius: 0.75rem;
+}
 .rounded-b-none{
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -1695,6 +1710,9 @@ select{
     background-color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
 }
+.bg-white\/90{
+    background-color: rgba(255, 255, 255, 0.9);
+}
 .bg-cover{
     background-size: cover;
 }
@@ -1774,6 +1792,10 @@ select{
 .px-5{
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+}
+.px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 .px-8{
     padding-left: 2rem;
@@ -1985,6 +2007,11 @@ select{
     --tw-text-opacity: 1 !important;
     color: rgba(255, 255, 255, 1) !important;
     color: rgba(255, 255, 255, var(--tw-text-opacity, 1)) !important;
+}
+.text-\[\#b0793c\]{
+    --tw-text-opacity: 1;
+    color: rgba(176, 121, 60, 1);
+    color: rgba(176, 121, 60, var(--tw-text-opacity, 1));
 }
 .text-amber-400{
     --tw-text-opacity: 1;
@@ -23856,6 +23883,11 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .target\:btn:target:hover{
     opacity: 0.8;
 }
+.hover\:bg-white:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
+}
 .hover\:text-dark:hover{
     --tw-text-opacity: 1;
     color: rgba(29, 31, 31, 1);
@@ -23895,6 +23927,9 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .sm\:col-span-2{
         grid-column: span 2 / span 2;
     }
+    .sm\:col-span-3{
+        grid-column: span 3 / span 3;
+    }
     .sm\:row-span-2{
         grid-row: span 2 / span 2;
     }
@@ -23913,9 +23948,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     .sm\:mt-0{
         margin-top: 0px;
     }
-    .sm\:mt-8{
-        margin-top: 2rem;
-    }
     .sm\:block{
         display: block;
     }
@@ -23924,6 +23956,9 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     }
     .sm\:grid{
         display: grid;
+    }
+    .sm\:h-\[300px\]{
+        height: 300px;
     }
     .sm\:h-auto{
         height: auto;
