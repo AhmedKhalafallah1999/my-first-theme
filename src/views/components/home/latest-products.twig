@@ -5,49 +5,29 @@
 | component       | object     |
 #}
 
-{# جلب 3 منتجات للبانر: نستخدم dropdown_list إن كانت موجودة وإلا نعود لـ products #}
-{% set raw_banner = component.dropdown_list is defined and component.dropdown_list ? component.dropdown_list : products %}
-{% set banner_items = raw_banner | slice(0, 3) %}
+{# جلب 3 منتجات للبانر #}
+{% set banner_items = products | slice(0, 3) %}
 
 <section class="container mt-10">
 
     {# ====================== بانر أعلى الصفحة ====================== #}
     <div class="relative w-full grid grid-cols-1 sm:grid-cols-3 gap-0 rounded-xl overflow-hidden">
 
-        {% if banner_items is not empty %}
-            {% for item in banner_items %}
-                {# نحاول استخراج رابط الصورة من الحقول المحتملة #}
-                {% set img_src = 
-                    (item.image is defined and item.image is not empty and item.image.url is defined) ? item.image.url
-                    : (item.image is defined and item.image is not empty) ? item.image
-                    : (item.images is defined and item.images|length > 0 and item.images[0].url is defined) ? item.images[0].url
-                    : '/assets/images/placeholder.png'  # صورة بديلة إن لم توجد صورة
-                %}
-                {# alt و link احتياطي #}
-                {% set alt_text = item.name is defined ? item.name : (item.title is defined ? item.title : 'منتج') %}
-                {% set product_url = item.url is defined ? item.url : (item.product_url is defined ? item.product_url : '/products') %}
-                
-                <a href="{{ product_url }}" class="block h-[260px] sm:h-[300px] w-full">
-                    <img 
-                        src="{{ img_src }}" 
-                        alt="{{ alt_text }}"
-                        class="w-full h-full object-cover"
-                        loading="lazy"
-                    >
-                </a>
-            {% endfor %}
-        {% else %}
-            {# حالة عدم وجود منتجات — عرض عنصر ثابت أو رسالة #}
-            <div class="col-span-1 sm:col-span-3 h-[260px] sm:h-[300px] flex items-center justify-center bg-gray-100">
-                <p class="text-gray-500">لا توجد منتجات لعرضها في البانر حالياً</p>
+        {% for item in banner_items %}
+            <div class="h-[260px] sm:h-[300px] w-full">
+                <img 
+                    src="{{ item.image }}" 
+                    alt="{{ item.name }}"
+                    class="w-full h-full object-cover"
+                >
             </div>
-        {% endif %}
+        {% endfor %}
 
         {# زر تسوق الآن في الوسط #}
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="absolute inset-0 flex items-center justify-center">
             <a 
                 href="/products"
-                class="pointer-events-auto px-6 py-2 bg-white/90 hover:bg-white text-[#b0793c] font-semibold rounded-md transition shadow"
+                class="px-6 py-2 bg-white/90 hover:bg-white text-[#b0793c] font-semibold rounded-md transition shadow"
             >
                 تسوق الآن
             </a>
@@ -56,8 +36,8 @@
 
     {# ====================== عنوان القسم ====================== #}
     <div class="text-center mt-10 mb-8">
-        <h2 class="text-3xl font-bold">{{ component.title ?: 'منتجاتنا' }}</h2>
-        <p class="text-gray-500 mt-2">{{ component.desc ?: 'تألق و كن مميزاً مع منتجاتنا' }}</p>
+        <h2 class="text-3xl font-bold">{{ component.title }}</h2>
+        <p class="text-gray-500 mt-2">{{ component.desc }}</p>
     </div>
 
     {# ====================== منتجات سلة ====================== #}
