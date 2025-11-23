@@ -1097,7 +1097,7 @@
                 "ar": "تصفح حسب التصنيفات"
             },
             "icon": "sicon-store",
-            "path": "home.serach-by-category",
+            "path": "home.search-by-category",
             "fields": []
         }
     ],
