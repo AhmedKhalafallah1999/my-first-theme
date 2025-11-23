@@ -1,14 +1,50 @@
-{#
+{#  
 | Variable        | Type       | Description                    |
 |-----------------|------------|--------------------------------|
-| products        | Products[] |                                |
-| position        | Int        | Sorting number start from zero |
+| products        | Products[] | Latest products automatically |
+| component       | object     |
 #}
-<section class="s-block s-block--latest-products container mt-6 sm:mt-8">
-    <div class="s-block__title">
-      <h2>{{ component.title }}</h2>
-      <p>{{ component.desc }}</p>
+
+{# جلب 3 منتجات للبانر #}
+{% set banner_items = products | slice(0, 3) %}
+
+<section class="container mt-10">
+
+    {# ====================== بانر أعلى الصفحة ====================== #}
+    <div class="relative w-full grid grid-cols-1 sm:grid-cols-3 gap-0 rounded-xl overflow-hidden">
+
+        {% for item in banner_items %}
+            <div class="h-[260px] sm:h-[300px] w-full">
+                <img 
+                    src="{{ item.image }}" 
+                    alt="{{ item.name }}"
+                    class="w-full h-full object-cover"
+                >
+            </div>
+        {% endfor %}
+
+        {# زر تسوق الآن في الوسط #}
+        <div class="absolute inset-0 flex items-center justify-center">
+            <a 
+                href="/products"
+                class="px-6 py-2 bg-white/90 hover:bg-white text-[#b0793c] font-semibold rounded-md transition shadow"
+            >
+                تسوق الآن
+            </a>
+        </div>
     </div>
-    
-    <salla-products-list source="latest"></salla-products-list>
-</section> 
+
+    {# ====================== عنوان القسم ====================== #}
+    <div class="text-center mt-10 mb-8">
+        <h2 class="text-3xl font-bold">{{ component.title }}</h2>
+        <p class="text-gray-500 mt-2">{{ component.desc }}</p>
+    </div>
+
+    {# ====================== منتجات سلة ====================== #}
+    <salla-products-list 
+        source="latest" 
+        limit="8" 
+        class="mt-4"
+    ></salla-products-list>
+
+</section>
