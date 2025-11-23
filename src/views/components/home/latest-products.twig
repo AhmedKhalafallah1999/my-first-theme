@@ -1,3 +1,10 @@
+{#  
+| Variable        | Type       | Description                    |
+|-----------------|------------|--------------------------------|
+| products        | Products[] | Latest products automatically |
+| component       | object     |
+#}
+
 {# جلب 3 منتجات للبانر: نستخدم dropdown_list إن كانت موجودة وإلا نعود لـ products #}
 {% set raw_banner = component.dropdown_list is defined and component.dropdown_list ? component.dropdown_list : products %}
 {% set banner_items = raw_banner | slice(0, 3) %}
