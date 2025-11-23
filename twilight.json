@@ -1089,6 +1089,16 @@
                     "maxLength": 30
                 }
             ]
+        },
+        {
+            "key": "c8546d08-3e91-440b-9fbd-332a0253659d",
+            "title": {
+                "en": "search by category",
+                "ar": "تصفح حسب التصنيفات"
+            },
+            "icon": "sicon-store",
+            "path": "home.serach-by-category",
+            "fields": []
         }
     ],
     "support_url": null,
