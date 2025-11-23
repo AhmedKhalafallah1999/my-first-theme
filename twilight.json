@@ -1089,33 +1089,6 @@
                     "maxLength": 30
                 }
             ]
-        },
-        {
-            "key": "f2d91e44-75ca-4296-8c51-1860d62374c7",
-            "title": {
-                "en": "landing page",
-                "ar": "لاندينج بيج"
-            },
-            "icon": "sicon-store",
-            "path": "home.landing-page",
-            "fields": [
-                {
-                    "id": "dropdown_list",
-                    "type": "items",
-                    "format": "dropdown-list",
-                    "label": "Dropdown List",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-keyboard_arrow_down",
-                    "selected": [],
-                    "options": [],
-                    "source": "Products Tags",
-                    "multichoice": true,
-                    "searchable": true,
-                    "required": false,
-                    "value": []
-                }
-            ]
         }
     ],
     "support_url": null,
