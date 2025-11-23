@@ -24590,3 +24590,28 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
         left: 1.25rem;
     }
 }
+
+
+/* استهداف زر إضافة للسلة */
+.s-button-element.s-button-btn.s-button-outline.s-button-wide.s-button-primary-outline {
+    background-color: #E8AE87; /* الخلفية */
+    color: #000000; /* النص والايقونة بالأسود */
+    width: 149.18px; /* العرض */
+    height: 42.48px; /* الارتفاع */
+    border-radius: 5.18px; /* الانحناء */
+    opacity: 1; /* الشفافية */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* المسافة بين الأيقونة والنص */
+}
+
+/* تأكد أن الأيقونة تأخذ اللون الأسود */
+.s-button-element.s-button-btn.s-button-outline.s-button-wide.s-button-primary-outline i {
+    color: #000000;
+}
+
+/* إزالة أي حد (border) للزر إذا لزم */
+.s-button-element.s-button-btn.s-button-outline.s-button-wide.s-button-primary-outline {
+    border: none;
+}
