@@ -1101,12 +1101,18 @@
             "fields": [
                 {
                     "id": "title",
-                    "type": "static",
-                    "format": "title",
-                    "label": "Title",
-                    "value": "تصفح حسب التصنيفات",
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
+                    "type": "string",
+                    "format": "text",
+                    "label": "String",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "اكتب العنوان الذي تحب ظهوره",
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 },
                 {
                     "id": "dropdown_list",
