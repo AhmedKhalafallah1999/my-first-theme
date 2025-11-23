@@ -1098,7 +1098,24 @@
             },
             "icon": "sicon-store",
             "path": "home.landing-page",
-            "fields": []
+            "fields": [
+                {
+                    "id": "dropdown_list",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "Dropdown List",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "Products Tags",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false,
+                    "value": []
+                }
+            ]
         }
     ],
     "support_url": null,
