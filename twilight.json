@@ -1188,6 +1188,16 @@
                     "value": []
                 }
             ]
+        },
+        {
+            "key": "c0843d4f-6378-4ee3-91a8-5bdec1ffbbcc",
+            "title": {
+                "en": "test",
+                "ar": "اختبار"
+            },
+            "icon": "sicon-store",
+            "path": "home.test",
+            "fields": []
         }
     ],
     "support_url": null,
