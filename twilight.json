@@ -1192,11 +1192,11 @@
         {
             "key": "c0843d4f-6378-4ee3-91a8-5bdec1ffbbcc",
             "title": {
-                "en": "test",
-                "ar": "اختبار"
+                "en": "topbanner",
+                "ar": "البانر العلوي الإعلاني"
             },
             "icon": "sicon-store",
-            "path": "home.test",
+            "path": "header.topbanner",
             "fields": [
                 {
                     "id": "title",
