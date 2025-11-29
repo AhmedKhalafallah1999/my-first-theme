@@ -6,6 +6,7 @@
 | component.slides[].title       | ?string  |                                                                              |
 | component.slides[].description | ?string  |                                                                              |
 | component.slides[].button      | ?string  | Button text                                                                  |
+| component.slides[].url         | ?string  | Button URL                                                                   |
 | component.slides               | object[] | list of slides                                                               |
 | position                       | int      | Sorting number start from zero                                               |
 #}
@@ -51,7 +52,7 @@
                             
                             {% if slide.button %}
                                 <div class="hero-slide__button-wrapper" data-swiper-parallax="-100">
-                                    <a href="#products" class="hero-slide__button">
+                                    <a href="{{ slide.url|default('#') }}" class="hero-slide__button">
                                         <span>{{ slide.button }}</span>
                                         <i class="sicon-keyboard_arrow_left"></i>
                                     </a>
@@ -62,19 +63,17 @@
                 </div>
             {% endfor %}
         </div>
-        
-        {# Custom Navigation Arrows #}
-        <div slot="navigation">
-            <div class="hero-slider-nav">
-                <button class="hero-slider-nav__btn hero-slider-nav__btn--prev swiper-button-prev" aria-label="Previous slide">
-                    <i class="sicon-keyboard_arrow_right"></i>
-                </button>
-                <button class="hero-slider-nav__btn hero-slider-nav__btn--next swiper-button-next" aria-label="Next slide">
-                    <i class="sicon-keyboard_arrow_left"></i>
-                </button>
-            </div>
-        </div>
     </salla-slider>
+    
+    {# Custom Navigation Arrows - Outside salla-slider #}
+    <div class="hero-slider-nav">
+        <button class="hero-slider-nav__btn hero-slider-nav__btn--prev" onclick="document.querySelector('#main-slider-{{ position }}').swiper.slidePrev()" aria-label="Previous slide">
+            <i class="sicon-keyboard_arrow_right"></i>
+        </button>
+        <button class="hero-slider-nav__btn hero-slider-nav__btn--next" onclick="document.querySelector('#main-slider-{{ position }}').swiper.slideNext()" aria-label="Next slide">
+            <i class="sicon-keyboard_arrow_left"></i>
+        </button>
+    </div>
 </section>
 
 <style>
