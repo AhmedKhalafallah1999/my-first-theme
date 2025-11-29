@@ -1,0 +1,137 @@
+<section class="zamalek-section container" style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+">
+    <!-- Decorative background elements -->
+    <div style="
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        filter: blur(40px);
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        filter: blur(40px);
+    "></div>
+
+    <div class="zamalek-content" style="position: relative; z-index: 1;">
+        <!-- Title Section -->
+        <div class="zamalek-title" style="margin-bottom: 40px;">
+            <div style="
+                display: inline-block;
+                padding: 8px 24px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50px;
+                margin-bottom: 20px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            ">
+                <i class="sicon-trophy" style="font-size: 1.2rem; margin-left: 8px;"></i>
+                <span style="font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;">{{ component.title.value ?: 'متي شجعته' }}</span>
+            </div>
+            
+            <h1 style="
+                font-size: 3.5rem;
+                font-weight: 800;
+                margin: 0;
+                text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                line-height: 1.2;
+            ">
+                {{ component.title.value ?: 'متي شجعته' }}
+            </h1>
+        </div>
+
+        <!-- DateTime Display -->
+        {% if component.date_time %}
+        <div class="zamalek-datetime" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            padding: 24px 48px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+        ">
+            <!-- Calendar Icon -->
+            <div style="
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            ">
+                <i class="sicon-calendar-time" style="font-size: 1.8rem; color: #fff;"></i>
+            </div>
+
+            <!-- Date and Time Info -->
+            <div style="text-align: right;">
+                <div style="
+                    font-size: 0.85rem;
+                    color: #764ba2;
+                    font-weight: 600;
+                    margin-bottom: 6px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                ">
+                    تاريخ التشجيع
+                </div>
+                <div style="
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    color: #2d3748;
+                    direction: ltr;
+                    text-align: right;
+                ">
+                    {{ component.date_time|date('Y-m-d') }}
+                </div>
+                <div style="
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: #667eea;
+                    margin-top: 4px;
+                    direction: ltr;
+                    text-align: right;
+                ">
+                    {{ component.date_time|date('H:i') }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Decorative bottom element -->
+        <div style="
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        ">
+            <div style="width: 40px; height: 3px; background: rgba(255, 255, 255, 0.5); border-radius: 2px;"></div>
+            <div style="width: 8px; height: 8px; background: rgba(255, 255, 255, 0.8); border-radius: 50%;"></div>
+            <div style="width: 40px; height: 3px; background: rgba(255, 255, 255, 0.5); border-radius: 2px;"></div>
+        </div>
+    </div>
+</section>

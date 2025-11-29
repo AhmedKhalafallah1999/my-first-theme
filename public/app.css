@@ -886,9 +886,6 @@ select{
 .pointer-events-none{
     pointer-events: none;
 }
-.pointer-events-auto{
-    pointer-events: auto;
-}
 .visible{
     visibility: visible;
 }
@@ -969,9 +966,6 @@ select{
 }
 .z-\[2\]{
     z-index: 2;
-}
-.col-span-1{
-    grid-column: span 1 / span 1;
 }
 .col-span-2{
     grid-column: span 2 / span 2;
@@ -23926,9 +23920,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 @media (min-width: 640px){
     .sm\:col-span-2{
         grid-column: span 2 / span 2;
-    }
-    .sm\:col-span-3{
-        grid-column: span 3 / span 3;
     }
     .sm\:row-span-2{
         grid-row: span 2 / span 2;
