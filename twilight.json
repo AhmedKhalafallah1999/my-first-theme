@@ -1199,29 +1199,34 @@
             "path": "header.topbanner",
             "fields": [
                 {
-                    "id": "title",
-                    "type": "static",
-                    "format": "title",
-                    "label": "Title",
-                    "value": "اختبار",
-                    "variant": "h1",
-                    "icon": "sicon-format-text"
-                },
-                {
-                    "id": "dropdown_list",
-                    "type": "items",
-                    "format": "dropdown-list",
-                    "label": "Dropdown List",
-                    "description": "المواصفات",
+                    "id": "top-banner",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "Top Banner",
+                    "description": "اكتب العبارات التي تحب ظهورها أعلي المتجر",
                     "labelHTML": null,
-                    "icon": "sicon-keyboard_arrow_down",
-                    "selected": [],
-                    "options": [],
-                    "source": "Coupons",
-                    "multichoice": true,
-                    "searchable": true,
-                    "required": false,
-                    "value": []
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "top-banner.sentence",
+                            "type": "string",
+                            "format": "text",
+                            "label": "String",
+                            "description": "اكتب العبارة بشكل مختصر وشيق هنا",
+                            "labelHTML": null,
+                            "placeholder": "اكتب العبارة بشكل مختصر وشيق هنا",
+                            "icon": "sicon-format-text-alt",
+                            "value": "خصومات تصل إلي 50% بمناسبة الجمعة البيضاء",
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": "60"
+                        }
+                    ],
+                    "value": [],
+                    "minLength": "1",
+                    "maxLength": "5"
                 }
             ]
         },
