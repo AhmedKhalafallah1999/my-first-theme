@@ -1232,7 +1232,7 @@
                 "ar": ".l...jتتتتزززمالك"
             },
             "icon": "sicon-store",
-            "path": "product.zamalek",
+            "path": "home.zamalek",
             "fields": [
                 {
                     "id": "title",
