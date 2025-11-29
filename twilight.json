@@ -1233,7 +1233,29 @@
             },
             "icon": "sicon-store",
             "path": "product.zamalek",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "static",
+                    "format": "title",
+                    "label": "Title",
+                    "value": "متي شجعته",
+                    "variant": "h1",
+                    "icon": "sicon-format-text"
+                },
+                {
+                    "id": "date_time",
+                    "type": "string",
+                    "format": "datetime",
+                    "inputType": "datetime-local",
+                    "label": "Date Time",
+                    "description": "اختار التاريخ",
+                    "labelHTML": null,
+                    "icon": "sicon-calendar-time",
+                    "value": "2021-10-01T15:23",
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": null,
