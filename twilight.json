@@ -1224,6 +1224,16 @@
                     "value": []
                 }
             ]
+        },
+        {
+            "key": "f715b12a-a8f4-46ed-bf18-328f78538681",
+            "title": {
+                "en": "zamalek",
+                "ar": ".l...jتتتتزززمالك"
+            },
+            "icon": "sicon-store",
+            "path": "product.zamalek",
+            "fields": []
         }
     ],
     "support_url": null,
