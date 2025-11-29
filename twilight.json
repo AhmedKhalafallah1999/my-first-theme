@@ -1196,7 +1196,7 @@
                 "ar": "البانر العلوي الإعلاني"
             },
             "icon": "sicon-store",
-            "path": "header.topbanner",
+            "path": "header.top-banner",
             "fields": [
                 {
                     "id": "top-banner",
