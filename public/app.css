@@ -22296,7 +22296,7 @@ input[type=radio].sr-only:checked ~ div.share-btns-list {
   stroke-dashoffset: 100;
 }
 .s-product-card-content-sub{
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0.75rem;
 }
 .s-product-card-starting-price{
@@ -22615,7 +22615,7 @@ input[type=radio].sr-only:checked ~ div.model-viewer__poster {
     border-bottom-right-radius: .75rem;
 }
 .s-product-card-starting-price{
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0.625rem;
 }
 .s-product-card-starting-price h4{
@@ -22796,6 +22796,586 @@ salla-quantity-input[max="1"] input{
 }
 salla-quantity-input[max="1"] .s-quantity-input-button{
     cursor: not-allowed;
+}
+/* ============================================
+   CUSTOM PRODUCT CARD DESIGN - FIGMA STYLE
+   ============================================ */
+.s-product-card-entry{
+    overflow: hidden;
+    border-radius: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.s-product-card-entry:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+.s-product-card-vertical{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+.s-product-card-vertical .s-product-card-image{
+    position: relative;
+    overflow: hidden;
+    --tw-bg-opacity: 1;
+    background-color: rgba(249, 250, 251, 1);
+    background-color: rgba(249, 250, 251, var(--tw-bg-opacity, 1));
+  border-radius: 16px 16px 0 0;
+  aspect-ratio: 1/1;
+}
+.s-product-card-vertical .s-product-card-image img{
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+.s-product-card-vertical .s-product-card-image:hover img {
+  transform: scale(1.05);
+}
+.s-product-card-vertical .s-product-card-wishlist-btn{
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 10;
+}
+input[type=radio].sr-only div.s-product-card-vertical .s-product-card-wishlist-btn {
+  transition: all 0.3s;
+}
+input[type=radio].sr-only:checked ~ div.s-product-card-vertical .s-product-card-wishlist-btn {
+  border-color: var(--color-main);
+}
+.s-product-card-vertical .s-product-card-wishlist-btn{
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.9);
+    --tw-backdrop-blur: blur(4px);
+    backdrop-filter: blur(4px) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    display: flex;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.s-product-card-vertical .s-product-card-wishlist-btn i{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  color: #4A3B32;
+}
+.s-product-card-vertical .s-product-card-wishlist-btn:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity, 1));
+  transform: scale(1.1);
+}
+.s-product-card-vertical .s-product-card-wishlist-btn.s-product-card-wishlist-added i{
+    --tw-text-opacity: 1;
+    color: rgba(239, 68, 68, 1);
+    color: rgba(239, 68, 68, var(--tw-text-opacity, 1));
+}
+.s-product-card-vertical .s-product-card-content{
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-main{
+    margin-bottom: 0.75rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-main .s-product-card-content-title{
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  color: #2D2D2D;
+  line-height: 1.4;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-main .s-product-card-content-title a{
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-main .s-product-card-content-title a:hover{
+    color: #414042;
+    color: var(--color-primary);
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-main .s-product-card-content-subtitle{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgba(107, 114, 128, 1);
+    color: rgba(107, 114, 128, var(--tw-text-opacity, 1));
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub{
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-price,
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-sale-price h4,
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-starting-price h4{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+  color: #2D2D2D;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-sale-price{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-sale-price span{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgba(156, 163, 175, 1);
+    color: rgba(156, 163, 175, var(--tw-text-opacity, 1));
+    text-decoration-line: line-through;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-rating{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-rating i{
+    --tw-text-opacity: 1;
+    color: rgba(250, 204, 21, 1);
+    color: rgba(250, 204, 21, var(--tw-text-opacity, 1));
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-sub .s-product-card-rating span{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgba(75, 85, 99, 1);
+    color: rgba(75, 85, 99, var(--tw-text-opacity, 1));
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn{
+    flex-shrink: 0;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button{
+  background: white !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button{
+    border-radius: 0.5rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgba(209, 213, 219, 1);
+    border-color: rgba(209, 213, 219, var(--tw-border-opacity, 1));
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button i{
+  color: #4A3B32 !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button i{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button:hover {
+  border-color: #414042 !important;
+  border-color: var(--color-primary) !important;
+  background: #FFF5F0 !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button {
+  border-color: #EF4444 !important;
+  background: #FFF0F0 !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button i {
+  color: #EF4444 !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button{
+    flex: 1 1 0%;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element{
+  background: #D4A574 !important;
+  color: white !important;
+  border: none !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element{
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element:hover {
+  background: #C09563 !important;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3) !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element:hover {
+  transform: translateY(-2px);
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element:active {
+  transform: translateY(0);
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element .s-button-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element .s-button-text i{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button .s-button-element .s-button-text span{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button[product-status=out] .s-button-element {
+  background: #E5E7EB !important;
+  color: #6B7280 !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button[product-status=out] .s-button-element {
+  cursor: not-allowed;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button[product-status=out] .s-button-element:hover {
+  background: #E5E7EB !important;
+  box-shadow: none !important;
+}
+.s-product-card-vertical .s-product-card-content .s-product-card-content-footer salla-add-product-button[product-status=out] .s-button-element:hover {
+  transform: none;
+}
+.s-product-card-vertical .s-product-card-promotion-title,
+.s-product-card-vertical .s-product-card-quantity,
+.s-product-card-vertical .s-product-card-out-badge{
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 10;
+}
+input[type=radio].sr-only div.s-product-card-vertical .s-product-card-promotion-title,input[type=radio].sr-only div
+.s-product-card-vertical .s-product-card-quantity,input[type=radio].sr-only div
+.s-product-card-vertical .s-product-card-out-badge {
+  transition: all 0.3s;
+}
+input[type=radio].sr-only:checked ~ div.s-product-card-vertical .s-product-card-promotion-title,input[type=radio].sr-only:checked ~ div
+.s-product-card-vertical .s-product-card-quantity,input[type=radio].sr-only:checked ~ div
+.s-product-card-vertical .s-product-card-out-badge {
+  border-color: var(--color-main);
+}
+.s-product-card-vertical .s-product-card-promotion-title,
+.s-product-card-vertical .s-product-card-quantity,
+.s-product-card-vertical .s-product-card-out-badge{
+    border-radius: 9999px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    --tw-bg-opacity: 1;
+    background-color: rgba(239, 68, 68, 1);
+    background-color: rgba(239, 68, 68, var(--tw-bg-opacity, 1));
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+.s-product-card-vertical .s-product-card-quantity{
+    --tw-bg-opacity: 1;
+    background-color: rgba(34, 197, 94, 1);
+    background-color: rgba(34, 197, 94, var(--tw-bg-opacity, 1));
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+.s-product-card-vertical .s-product-card-out-badge{
+    --tw-bg-opacity: 1;
+    background-color: rgba(107, 114, 128, 1);
+    background-color: rgba(107, 114, 128, var(--tw-bg-opacity, 1));
+}
+.s-product-card-special .s-product-card-image {
+  aspect-ratio: 4/5;
+}
+.s-product-card-special .s-product-card-content-pie{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+input[type=radio].sr-only div.s-product-card-special .s-product-card-content-pie {
+  transition: all 0.3s;
+}
+input[type=radio].sr-only:checked ~ div.s-product-card-special .s-product-card-content-pie {
+  border-color: var(--color-main);
+}
+.s-product-card-horizontal{
+    flex-direction: row;
+}
+.s-product-card-horizontal .s-product-card-image{
+    width: 8rem;
+    flex-shrink: 0;
+  border-radius: 16px 0 0 16px;
+}
+.s-product-card-horizontal .s-product-card-content{
+    text-align: right;
+}
+.s-product-card-horizontal .s-product-card-content .s-product-card-content-sub{
+    justify-content: flex-start;
+}
+.s-product-card-full-image .s-product-card-image-full{
+    position: relative;
+  aspect-ratio: 1/1;
+}
+.s-product-card-full-image .s-product-card-image-full .s-product-card-overlay{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+input[type=radio].sr-only div.s-product-card-full-image .s-product-card-image-full .s-product-card-overlay {
+  transition: all 0.3s;
+}
+input[type=radio].sr-only:checked ~ div.s-product-card-full-image .s-product-card-image-full .s-product-card-overlay {
+  border-color: var(--color-main);
+}
+.s-product-card-full-image .s-product-card-image-full .s-product-card-overlay:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.s-product-card-full-image .s-product-card-image-full .s-product-card-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s-product-card-full-image .s-product-card-content{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+input[type=radio].sr-only div.s-product-card-full-image .s-product-card-content {
+  transition: all 0.3s;
+}
+input[type=radio].sr-only:checked ~ div.s-product-card-full-image .s-product-card-content {
+  border-color: var(--color-main);
+}
+.s-product-card-full-image .s-product-card-content{
+    background-image: linear-gradient(to top, var(--tw-gradient-stops));
+    --tw-gradient-from: rgba(0, 0, 0, 0.8) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: transparent var(--tw-gradient-to-position);
+    padding: 1rem;
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+}
+.s-product-card-full-image .s-product-card-content .s-product-card-content-title a{
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+}
+.s-product-card-full-image .s-product-card-content .s-product-card-price{
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
+}
+.s-product-card-minimal{
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+}
+.s-product-card-minimal .s-product-card-image{
+    height: 5rem;
+    width: 5rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+}
+.s-product-card-minimal .s-product-card-content{
+    flex: 1 1 0%;
+    padding: 0px;
+    text-align: right;
+}
+.s-product-card-minimal .s-product-card-content .s-product-card-content-title{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.s-product-card-minimal .s-product-card-content .s-product-card-price{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+@media (max-width: 640px) {
+  .s-product-card-vertical .s-product-card-content-footer salla-add-product-button button span{
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+}
+/* ============================================
+   GLOBAL BUTTON OVERRIDES - HIGH SPECIFICITY
+   ============================================ */
+.s-product-card-entry salla-add-product-button .s-button-element,
+.s-product-card-entry salla-add-product-button button.s-button-element,
+.s-product-card-vertical salla-add-product-button .s-button-element,
+.s-product-card-vertical salla-add-product-button button.s-button-element,
+.s-product-card-horizontal salla-add-product-button .s-button-element,
+.s-product-card-horizontal salla-add-product-button button.s-button-element {
+  background: #D4A574 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  height: 3rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+.s-product-card-entry salla-add-product-button .s-button-element:hover,
+.s-product-card-entry salla-add-product-button button.s-button-element:hover,
+.s-product-card-vertical salla-add-product-button .s-button-element:hover,
+.s-product-card-vertical salla-add-product-button button.s-button-element:hover,
+.s-product-card-horizontal salla-add-product-button .s-button-element:hover,
+.s-product-card-horizontal salla-add-product-button button.s-button-element:hover {
+  background: #C09563 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3) !important;
+}
+.s-product-card-entry salla-add-product-button .s-button-element:active,
+.s-product-card-entry salla-add-product-button button.s-button-element:active,
+.s-product-card-vertical salla-add-product-button .s-button-element:active,
+.s-product-card-vertical salla-add-product-button button.s-button-element:active,
+.s-product-card-horizontal salla-add-product-button .s-button-element:active,
+.s-product-card-horizontal salla-add-product-button button.s-button-element:active {
+  transform: translateY(0) !important;
+}
+.s-product-card-entry salla-add-product-button[product-status=out] .s-button-element,
+.s-product-card-entry salla-add-product-button[product-status=out] button.s-button-element, .s-product-card-entry salla-add-product-button[product-status=out-of-stock] .s-button-element,
+.s-product-card-entry salla-add-product-button[product-status=out-of-stock] button.s-button-element,
+.s-product-card-vertical salla-add-product-button[product-status=out] .s-button-element,
+.s-product-card-vertical salla-add-product-button[product-status=out] button.s-button-element,
+.s-product-card-vertical salla-add-product-button[product-status=out-of-stock] .s-button-element,
+.s-product-card-vertical salla-add-product-button[product-status=out-of-stock] button.s-button-element,
+.s-product-card-horizontal salla-add-product-button[product-status=out] .s-button-element,
+.s-product-card-horizontal salla-add-product-button[product-status=out] button.s-button-element,
+.s-product-card-horizontal salla-add-product-button[product-status=out-of-stock] .s-button-element,
+.s-product-card-horizontal salla-add-product-button[product-status=out-of-stock] button.s-button-element {
+  background: #E5E7EB !important;
+  color: #6B7280 !important;
+  cursor: not-allowed !important;
+}
+.s-product-card-entry salla-add-product-button[product-status=out] .s-button-element:hover,
+.s-product-card-entry salla-add-product-button[product-status=out] button.s-button-element:hover, .s-product-card-entry salla-add-product-button[product-status=out-of-stock] .s-button-element:hover,
+.s-product-card-entry salla-add-product-button[product-status=out-of-stock] button.s-button-element:hover,
+.s-product-card-vertical salla-add-product-button[product-status=out] .s-button-element:hover,
+.s-product-card-vertical salla-add-product-button[product-status=out] button.s-button-element:hover,
+.s-product-card-vertical salla-add-product-button[product-status=out-of-stock] .s-button-element:hover,
+.s-product-card-vertical salla-add-product-button[product-status=out-of-stock] button.s-button-element:hover,
+.s-product-card-horizontal salla-add-product-button[product-status=out] .s-button-element:hover,
+.s-product-card-horizontal salla-add-product-button[product-status=out] button.s-button-element:hover,
+.s-product-card-horizontal salla-add-product-button[product-status=out-of-stock] .s-button-element:hover,
+.s-product-card-horizontal salla-add-product-button[product-status=out-of-stock] button.s-button-element:hover {
+  background: #E5E7EB !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element,
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element {
+  background: white !important;
+  border: 1px solid #D1D5DB !important;
+  border-radius: 0.5rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
+}
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element i,
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element i,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element i,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element i,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element i,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element i {
+  color: #4A3B32 !important;
+  font-size: 1.125rem !important;
+}
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element:hover,
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element:hover,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element:hover,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element:hover,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn .s-button-element:hover,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn button.s-button-element:hover {
+  border-color: #414042 !important;
+  border-color: var(--color-primary) !important;
+  background: #FFF5F0 !important;
+}
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element,
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element {
+  border-color: #EF4444 !important;
+  background: #FFF0F0 !important;
+}
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element i,
+.s-product-card-entry .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element i,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element i,
+.s-product-card-vertical .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element i,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element i,
+.s-product-card-horizontal .s-product-card-content-footer salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element i {
+  color: #EF4444 !important;
+}
+.s-product-card-image salla-button.s-product-card-wishlist-btn .s-button-element,
+.s-product-card-image salla-button.s-product-card-wishlist-btn button.s-button-element {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(4px) !important;
+  border-radius: 9999px !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+.s-product-card-image salla-button.s-product-card-wishlist-btn .s-button-element i,
+.s-product-card-image salla-button.s-product-card-wishlist-btn button.s-button-element i {
+  color: #4A3B32 !important;
+  font-size: 1.125rem !important;
+}
+.s-product-card-image salla-button.s-product-card-wishlist-btn .s-button-element:hover,
+.s-product-card-image salla-button.s-product-card-wishlist-btn button.s-button-element:hover {
+  background: white !important;
+  transform: scale(1.1) !important;
+}
+.s-product-card-image salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added .s-button-element i,
+.s-product-card-image salla-button.s-product-card-wishlist-btn.s-product-card-wishlist-added button.s-button-element i {
+  color: #EF4444 !important;
 }
 .brands-nav{
     display: flex;
