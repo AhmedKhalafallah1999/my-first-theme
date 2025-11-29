@@ -7,48 +7,20 @@
         <div class="marquee-track">
             {# Original Content #}
             <div class="marquee-content">
-                {% for item in component.top_banner %}
+                {% for item in component['top-banner'] %}
                     <div class="banner-item">
                         <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">{{ item['top-banner.sentence']|default(item.sentence) }}</span>
-                    </div>
-                {% else %}
-                    {# Fallback if no data is present, for visualization purposes #}
-                    <div class="banner-item">
-                        <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">خصومات تصل إلي 50% بمناسبة الجمعة البيضاء</span>
-                    </div>
-                    <div class="banner-item">
-                        <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">عروض حصرية لفترة محدودة</span>
-                    </div>
-                    <div class="banner-item">
-                        <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">تسوق الآن واستفد من الخصومات</span>
+                        <span class="banner-text">{{ item.sentence }}</span>
                     </div>
                 {% endfor %}
             </div>
 
             {# Duplicate Content for Seamless Loop #}
             <div class="marquee-content">
-                {% for item in component.top_banner %}
+                {% for item in component['top-banner'] %}
                     <div class="banner-item">
                         <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">{{ item['top-banner.sentence']|default(item.sentence) }}</span>
-                    </div>
-                {% else %}
-                    {# Fallback duplicate #}
-                    <div class="banner-item">
-                        <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">خصومات تصل إلي 50% بمناسبة الجمعة البيضاء</span>
-                    </div>
-                    <div class="banner-item">
-                        <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">عروض حصرية لفترة محدودة</span>
-                    </div>
-                    <div class="banner-item">
-                        <i class="sicon-star banner-icon"></i>
-                        <span class="banner-text">تسوق الآن واستفد من الخصومات</span>
+                        <span class="banner-text">{{ item.sentence }}</span>
                     </div>
                 {% endfor %}
             </div>

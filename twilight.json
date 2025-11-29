@@ -1224,7 +1224,17 @@
                             "maxLength": "60"
                         }
                     ],
-                    "value": [],
+                    "value": [
+                        {
+                            "top-banner.sentence": "خصومات تصل إلي 50% بمناسبة الجمعة البيضاء"
+                        },
+                        {
+                            "top-banner.sentence": "عروض حصرية لفترة محدودة"
+                        },
+                        {
+                            "top-banner.sentence": "تسوق الآن واستفد من الخصومات"
+                        }
+                    ],
                     "minLength": "1",
                     "maxLength": "5"
                 }
