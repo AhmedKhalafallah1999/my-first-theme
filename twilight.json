@@ -299,6 +299,21 @@
                             "placeholder": "يمكنك إضافة تفاصيل إضافية هنا",
                             "minLength": 0,
                             "maxLength": 255
+                        },
+                        {
+                            "id": "slides.button",
+                            "type": "string",
+                            "format": "text",
+                            "label": "String",
+                            "description": "اكتب النص الذي تحب ظهوره علي الزرار",
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": "اكتشف المزيد",
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
                         }
                     ]
                 }
